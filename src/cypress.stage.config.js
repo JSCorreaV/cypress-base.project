@@ -2,7 +2,7 @@ const { defineConfig } = require('cypress');
 
 module.exports = defineConfig({
     chromeWebSecurity: false,
-    numTestsKeptInMemory: 1,
+    numTestsKeptInMemory: 10,
     projectId: '8vb812bn',
     trashAssetsBeforeRuns: false,
     viewportHeight: 1920,

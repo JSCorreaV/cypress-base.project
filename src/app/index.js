@@ -27,11 +27,25 @@ document
             tableBody.innerHTML = '';
             mockData.forEach((person, index) => {
                 tableBody.innerHTML += `<tr>
-                <th scope="row">${index}</th>
-                <td>${person.firstname}</td>
-                <td>${person.lastname}</td>
-                <td>@${person.handle}</td>
+                    <th scope="row">${index}</th>
+                    <td>${person.firstname}</td>
+                    <td>${person.lastname}</td>
+                    <td>@${person.handle}</td>
             </tr>`;
             });
         }, 5000); // API time response
     });
+
+$(function () {
+    // Check if the browser supports the native date input
+    var isNativeDatePickerSupported = (function () {
+        var input = document.createElement('input');
+        input.setAttribute('type', 'date');
+        return input.type !== 'text';
+    })();
+
+    // If native date input is not supported, use jQuery UI datepicker
+    if (!isNativeDatePickerSupported) {
+        $('#startDate').datepicker();
+    }
+});

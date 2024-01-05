@@ -31,7 +31,7 @@ describe('Index tests', () => {
             );
         });
 
-        it('With explicit wait - waiting for loading icons', function () {
+        it.only('With explicit wait - waiting for loading icons', function () {
             cy.get('[data-ui=load-data-button').click();
             cy.contains('Loading...').should('be.visible');
             cy.contains('Loading...', { timeout: 10000 }).should('not.exist');
