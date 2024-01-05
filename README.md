@@ -32,7 +32,7 @@ npm install
 ## Mock App Start Up
 
 1. Install a Visual Studio Code **Live Server** extension
-2. Right click on the `index.html` and hit Open with Live Server a tab will open up in your browser
+2. Right click on the `src/app/index.html` and hit Open with Live Server a tab will open up in your browser
 3. Make sure that `cypress.stage.config.js` `baseUrl` variable is set to the current one shown in your browser
 
 Usually is: http://127.0.0.1:5500/src/app/

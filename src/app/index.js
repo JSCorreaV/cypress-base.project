@@ -1,19 +1,37 @@
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-    document.getElementById('myDropdown').classList.toggle('show');
-}
+const mockData = [
+    {
+        firstname: 'John',
+        lastname: 'Doe',
+        handle: 'instagram',
+    },
+    {
+        firstname: 'Jane',
+        lastname: 'Doe',
+        handle: 'x',
+    },
+    {
+        firstname: 'Checo',
+        lastname: 'Perez',
+        handle: 'threads',
+    },
+];
 
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function (event) {
-    if (!event.target.matches('.dropbtn')) {
-        var dropdowns = document.getElementsByClassName('dropdown-content');
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
-            }
-        }
-    }
-};
+// Let's say that the user requested some data
+document
+    .querySelector('[data-ui=load-data-button')
+    .addEventListener('click', () => {
+        const tableBody = document.querySelector('.table tbody');
+        tableBody.innerHTML = 'Loading...';
+
+        setTimeout(() => {
+            tableBody.innerHTML = '';
+            mockData.forEach((person, index) => {
+                tableBody.innerHTML += `<tr>
+                <th scope="row">${index}</th>
+                <td>${person.firstname}</td>
+                <td>${person.lastname}</td>
+                <td>@${person.handle}</td>
+            </tr>`;
+            });
+        }, 5000); // API time response
+    });
