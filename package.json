@@ -8,6 +8,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "node src/app/server.js",
     "cy:open:local": "cypress open --project src/ --config-file cypress.stage.config.js --e2e",
     "cy:open:stage": "cypress open --project src/ --config-file cypress.stage.config.js --e2e",
     "smoke:beta:run": "cypress run --project src/ --headless --browser chrome --env grep=smoke --config-file cypress.beta.config.js ",
@@ -27,5 +28,8 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }

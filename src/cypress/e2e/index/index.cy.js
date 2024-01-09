@@ -2,6 +2,7 @@
 
 describe('Index tests', () => {
     beforeEach(() => {
+        cy.login();
         cy.visit('');
     });
 
