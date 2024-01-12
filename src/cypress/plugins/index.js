@@ -7,7 +7,7 @@ module.exports = (on, config) => {
         if (browser.family === 'chromium' && browser.name !== 'electron') {
             launchOptions.args.push('--disable-dev-shm-usage');
             launchOptions.args.push(
-                '--disable-features=SameSiteByDefaultCookies',
+                '--disable-features=SameSiteByDefaultCookies'
             );
         }
 
