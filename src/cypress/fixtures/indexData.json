@@ -1,0 +1,12 @@
+{
+  "datePickerData": {
+      "currentDateData": {
+          "date": "23/07/2019",
+          "datePickerTitle": "Datepicker"
+      },
+      "startDateData": {
+          "startDate": "2018-07-22",
+          "newDate": "2023-04-17"
+      }
+  }
+}
